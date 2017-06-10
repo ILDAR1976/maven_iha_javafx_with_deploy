@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 public class Controller 
 {
 	@FXML
-	private TextArea textOut;
+	private TextArea outText;
 	@FXML
 	private TextField edit;
 	
@@ -18,12 +18,12 @@ public class Controller
 	
 	@FXML
     private void initialize() {
-		textOut.setText("Hello, this is javafx application!");
+		outText.setText("Hello, this is javafx application!");
 	}
 	
     @FXML
     private void handleAddText() {
-        App.copyText(textOut,edit);
+        App.copyText(outText,edit);
     }
 
     @FXML
