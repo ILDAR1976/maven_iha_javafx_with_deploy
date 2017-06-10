@@ -1,6 +1,9 @@
 <archetype>
-  <id>iha</id>
+  <id>iha_javafx</id>
   <sources>
+    <source>src/main/java/model/Model.java</source>
+    <source>src/main/java/view/Controller.java</source>
+    <source>src/main/java/view/Main.fxml</source>
     <source>src/main/java/App.java</source>
   </sources>
   <testSources>
