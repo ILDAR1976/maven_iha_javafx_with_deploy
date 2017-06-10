@@ -1,6 +1,6 @@
 package ${package}.view;
 
-import App;
+import ${package}.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -14,7 +14,7 @@ public class Controller
 	
 	private App App;
 	
-	public Controller{}
+	public Controller(){}
 	
 	@FXML
     private void initialize() {

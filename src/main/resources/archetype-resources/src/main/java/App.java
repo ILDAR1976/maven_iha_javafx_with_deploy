@@ -1,9 +1,10 @@
-package $package;
+package ${package};
 
 
 import java.io.IOException;
 
-import edu.computer_since.model.Model;
+import ${package}.model.Model;
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,13 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import test.fx.view.LoaderController;
+import ${package}.view.Controller;
 
 /**
  * Hello world!
  *
  */
-public class App extend Application
+public class App extends Application
 {
 	private Stage primaryStage;
 	
@@ -35,7 +36,7 @@ public class App extend Application
 	    try {
 	        FXMLLoader loader = new FXMLLoader();
 	        
-	        loader.setLocation(getClass().getResource("/${groupId}/${ArtefactId}/view/Main.fxml"));
+	        loader.setLocation(getClass().getResource("/${groupId}/${artifactId}/view/Main.fxml"));
 	        
 	        Parent mainView = loader.load();
 	
