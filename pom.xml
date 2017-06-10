@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>akhmetov</groupId>
-  <artifactId>iha</artifactId>
+  <artifactId>iha_javafx</artifactId>
   <version>1.0</version>
-  <name>Archetype - iha</name>
+  <name>Archetype - iha_javafx</name>
   <url>http://maven.apache.org</url>
 </project>
