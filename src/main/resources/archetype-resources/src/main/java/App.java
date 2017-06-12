@@ -36,7 +36,7 @@ public class App extends Application
 	    try {
 	        FXMLLoader loader = new FXMLLoader();
 	        
-	        loader.setLocation(getClass().getResource("/${groupId}/${artifactId}/view/Main.fxml"));
+	        loader.setLocation(getClass().getResource("/" + getPackageNamePattern() + "/view/Main.fxml"));
 	        
 	        Parent mainView = loader.load();
 	
@@ -58,6 +58,10 @@ public class App extends Application
 	public void copyText(TextArea ta, TextField tf){
 		Model m = new Model();
 		m.copyText(ta, tf);
+	}
+
+	private String getPackageNamePattern(){
+		return getClass().getPackage().getName().replace(".", "/");
 	}
 
 }
