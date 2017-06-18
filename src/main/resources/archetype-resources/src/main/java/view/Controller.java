@@ -1,6 +1,9 @@
 package ${package}.view;
 
 import ${package}.App;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -13,6 +16,7 @@ public class Controller
 	private TextField edit;
 	
 	private App App;
+	final static Logger logger = LogManager.getLogger(Controller.class);
 	
 	public Controller(){}
 	

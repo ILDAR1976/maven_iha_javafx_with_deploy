@@ -6,6 +6,9 @@
     <source>src/main/java/view/Main.fxml</source>
     <source>src/main/java/App.java</source>
   </sources>
+  <resources>
+    <resource>src/main/resources/log4j2.xml</resource>
+  </resources>
   <testSources>
     <source>src/test/java/AppTest.java</source>
   </testSources>

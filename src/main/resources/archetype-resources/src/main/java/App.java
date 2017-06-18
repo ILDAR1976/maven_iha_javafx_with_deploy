@@ -2,7 +2,9 @@ package ${package};
 
 
 import java.io.IOException;
-
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ${package}.model.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,10 +24,19 @@ import ${package}.view.Controller;
 public class App extends Application
 {
 	private Stage primaryStage;
+	final static Logger logger = LogManager.getLogger(App.class);
 	
 	public static void main( String[] args )
     {
-    	launch(args);
+		try{
+			
+			logger.log(Level.INFO, "Application runnig ...");
+
+			launch(args);
+		
+		}catch(ArithmeticException ex){
+			logger.error("Sorry, something wrong!", ex);
+		}
     }
     
 	@Override
