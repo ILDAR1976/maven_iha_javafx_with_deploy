@@ -3,7 +3,6 @@
     <Properties>
         <Property name="basePath">C:\\logs</Property>
     </Properties>
- 
     <Appenders>
         <RollingFile name="fileLogger" fileName="./app-info.log" filePattern="./app-info-%d{yyyy-MM-dd}.log">
             <PatternLayout>
