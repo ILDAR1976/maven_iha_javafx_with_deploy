@@ -147,7 +147,7 @@
 					<vendor>IHA</vendor>
 					<mainClass>${package}.${mainclassname}</mainClass>
 					<verbose>true</verbose>
-					<bundler>EXE</bundler>
+					<bundler>MSI</bundler>
 				</configuration>
 				<executions>
 					<!-- required before build-native -->
