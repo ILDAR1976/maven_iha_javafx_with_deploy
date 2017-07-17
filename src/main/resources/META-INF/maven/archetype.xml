@@ -1,5 +1,5 @@
 <archetype>
-  <id>iha_javafx</id>
+  <id>iha_javafx_with_deploy</id>
   <sources>
     <source>src/main/java/model/Model.java</source>
     <source>src/main/java/view/Controller.java</source>
