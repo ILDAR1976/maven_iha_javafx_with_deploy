@@ -149,7 +149,6 @@
 					<bundler>MSI</bundler>
 				</configuration>
 				<executions>
-					<!-- required before build-native -->
 					<execution>
 						<id>create-jfxjar</id>
 						<phase>package</phase>
