@@ -1,21 +1,17 @@
-package ${package};
+package ${package}.basic.om;
 
-
-import java.io.IOException;
+import ${package}.ui.model.Model;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ${package}.model.Model;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import ${package}.view.Controller;
+import javafx.scene.image.Image;
+import ${package}.ui.controller.Controller;
 
 /**
  * Hello world!
@@ -43,27 +39,30 @@ public class App extends Application
 	public void start(Stage primaryStage) throws Exception {
 	    this.primaryStage = primaryStage;
 	    this.primaryStage.setTitle("Hello world application");
-	
-	    try {
-	        FXMLLoader loader = new FXMLLoader();
-	        
-	        loader.setLocation(getClass().getResource("/" + getPackageNamePattern() + "/view/Main.fxml"));
-	        
-	        Parent mainView = loader.load();
-	
-	        Controller controller = loader.getController();
-	        
-	        controller.setApp(this);
-	        
-	        Scene scene = new Scene(mainView);
-	        
-	        this.primaryStage.setScene(scene);
-            
-	        this.primaryStage.show();
+
+		Controller controller = new Controller();
+
+		controller.setApp(this);
+
+		controller.prefWidthProperty().bind(primaryStage.widthProperty());
+
+		controller.prefHeightProperty().bind(primaryStage.heightProperty());
+
+		Group root = new Group();
+
+		root.getChildren().addAll(controller);
+
+                Scene scene = new Scene(root,300,500);
+
+		scene.getStylesheets()
+			.add(getClass().getClassLoader().getResource("Main.css").toExternalForm());
+		
+		this.primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("Main.jpg").toString()));
+
+		this.primaryStage.setScene(scene);
+
+		this.primaryStage.show();
 	    
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
 	}
 
 	public void copyText(TextArea ta, TextField tf){
@@ -71,8 +70,6 @@ public class App extends Application
 		m.copyText(ta, tf);
 	}
 
-	private String getPackageNamePattern(){
-		return getClass().getPackage().getName().replace(".", "/");
-	}
+
 
 }

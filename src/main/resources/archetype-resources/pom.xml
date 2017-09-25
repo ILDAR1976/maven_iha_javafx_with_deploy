@@ -11,8 +11,10 @@
 		<junit.version>4.12</junit.version>
 		<zenjava.version>8.8.3</zenjava.version>
 		<shade.version>3.1.0</shade.version>
+		<goal.java.sdk.path>C:\Program Files\Java\jdk1.8.0_144\</goal.java.sdk.path>
+		<goal.java.sdk.version>1.8.0_144</goal.java.sdk.version>
 		<sdkVersion>${java.vm.specification.version}</sdkVersion>
-		<mainclassname>App</mainclassname>
+		<mainclassname>basic.om.App</mainclassname>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,17 +38,13 @@
 		<resources>
 			<resource>
 				<filtering>false</filtering>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**/*.fxml</include>
-					<include>**/*.css</include>
-				</includes>
-			</resource>
-			<resource>
-				<filtering>false</filtering>
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/*.xml</include>
+					<include>**/*.fxml</include>
+					<include>**/*.css</include>
+					<include>**/*.png</include>
+					<include>**/*.jpg</include>
 				</includes>
 			</resource>
 		</resources>
@@ -115,6 +113,15 @@
 				<groupId>com.zenjava</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>${zenjava.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>javafx-packager</groupId>
+						<artifactId>javafx-packager</artifactId>
+						<version>${goal.java.sdk.version}</version>
+						<scope>system</scope>
+						<systemPath>${goal.java.sdk.path}\lib\ant-javafx.jar</systemPath>
+					</dependency>
+				</dependencies>
 				<configuration>
 					<vendor>IHA</vendor>
 					<mainClass>${package}.${mainclassname}</mainClass>
